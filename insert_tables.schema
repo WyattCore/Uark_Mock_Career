@@ -1,0 +1,36 @@
+INSERT INTO majors (major_name) VALUES
+('Computer Science'), ('Data Science'), ('Industrial Engineering'),
+('Electrical Engineering'), ('Mechanical Engineering');
+
+INSERT INTO employers (name, industry, city, state) VALUES
+('Acme Robotics','Manufacturing','Bentonville','AR'),
+('Ozark Analytics','Software','Fayetteville','AR'),
+('RiverTech','Consulting','Little Rock','AR'),
+('Pinnacle Power','Energy','Tulsa','OK'),
+('NorthStar Systems','Software','Dallas','TX'),
+('ArkData','Software','Fayetteville','AR'),
+('GreenWorks','Manufacturing','Springdale','AR');
+
+INSERT INTO students (first_name,last_name,class_year,major_id,gpa,grad_term,email) VALUES
+('Wyatt','Core','SR',1,3.90,'SP26','wyatt.core33@uark.edu'),
+('Bae', 'Luh', 'GR', 1, 3.20, 'SUM25', 'avery.weilert@uark.edu'),
+('Ava','Nguyen','JR',2,3.72,'FA26','ava.nguyen@uark.edu'),
+('Ethan','Smith','SR',3,3.41,'SP26','ethan.smith@uark.edu'),
+('Mia','Johnson','JR',1,3.85,'FA26','mia.johnson@uark.edu'),
+('Liam','Garcia','SR',4,3.20,'SP26','liam.garcia@uark.edu'),
+('Noah','Brown','SO',1,3.10,'SP27','noah.brown@uark.edu'),
+('Sophia','Martinez','SR',5,3.55,'SP26','sophia.m@uark.edu'),
+('Ella','Davis','SR',1,NULL,'SP26','ella.davis@uark.edu');   
+
+INSERT INTO applications(student_id, employer_id, role_title, app_date, source, status, salary_offer, term) VALUES
+(1, 2, 'Data Intern',        '2025-01-20','CareerFair','Interview',NULL,'SU25'),
+(1, 6, 'Data Analyst Intern','2025-01-22','Handshake','Offer',24000,'SU25'),
+(2, 2, 'BI Intern',          '2025-01-21','CareerFair','Applied',NULL,'SU25'),
+(3, 1, 'Mfg Data Intern',    '2025-01-23','Referral','Interview',NULL,'SU25'),
+(4, 5, 'SWE Intern',         '2025-01-25','Email','Rejected',NULL,'SU25'),
+(4, 2, 'Data Intern',        '2025-01-26','CareerFair','Offer',22000,'SU25'),
+(5, 4, 'Grid Analytics',     '2025-01-21','Handshake','Applied',NULL,'SU25'),
+(6, 7, 'Ops Analyst Intern', '2025-01-24','Other','Interview',NULL,'FA25'),
+(7, 1, 'Process Eng Intern', '2025-01-22','CareerFair','Offer',21000,'SU25'),
+(3, 6, 'data analyst intern','2025-1-27','careerFair','Interview',NULL,'SU25'),
+(2, 5, 'SWE INTERN',         '2025-01-28','CareerFair','Offer',26000,'SU25');

@@ -1,0 +1,35 @@
+SELECT * FROM majors;
+SELECT * FROM students;
+SELECT * FROM employers;
+SELECT * FROM applications;
+
+-- OFFERS BY MAJOR
+SELECT M.major_name, COUNT(A.status) AS offers FROM majors M
+LEFT JOIN students S ON M.major_id = S.major_id
+LEFT JOIN applications A on S.student_id = A.student_id
+	AND A.status = 'offer'
+GROUP BY M.major_name
+ORDER BY offers DESC; 
+
+-- AVERAGE SUMMER OFFER AMOUNT
+SELECT AVG(salary_offer) AS Average_Summer_Offer FROM applications
+WHERE status = 'Offer' AND term = 'SU25';
+
+
+-- APPLIED -> INTERVIEW -> OFFER (PER EMPLOYER)
+SELECT E.employer_id, E.name, SUM(A.status IN ('Applied', 'Interview', 'Offer')) AS applications,
+			   SUM(A.status IN ('Interview', 'Offer')) AS interviews,
+               SUM(A.status = 'Offer') AS offers 
+FROM employers E
+LEFT JOIN applications A ON  E.employer_id = A.employer_id
+GROUP BY E.name, E.employer_id
+ORDER BY offers DESC, interviews DESC, applications DESC;
+
+
+-- TOP STUDENTS BY GPA AND OFFER
+SELECT S.last_name, S.first_name, S.gpa, COUNT(A.status) AS offers FROM students S
+LEFT JOIN applications A ON S.student_id = A.student_id
+	AND A.status = 'Offer'
+GROUP BY S.last_name, S.first_name, S.gpa
+ORDER BY offers DESC, S.gpa DESC
+-- 

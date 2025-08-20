@@ -1,0 +1,42 @@
+CREATE DATABASE uark_mock_career;
+USE uark_mock_career;
+
+CREATE TABLE majors (
+	major_id INT PRIMARY KEY AUTO_INCREMENT,
+    major_name VARCHAR(100) UNIQUE
+);
+
+CREATE TABLE employers (
+	employer_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(120) NOT NULL,
+    industry VARCHAR(80),
+    city TEXT,
+    state TEXT
+);
+
+CREATE TABLE students (
+	student_id INT PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(60) NOT NULL,
+    last_name VARCHAR(60) NOT NULL,
+    class_year ENUM('FR', 'SO', 'JR', 'SR', 'GR') NOT NULL,
+    major_id INT,
+    gpa DECIMAL (3,2),
+    grad_term VARCHAR(10),
+    email VARCHAR(120) UNIQUE,
+    CONSTRAINT fk_students_major FOREIGN KEY (major_id) REFERENCES majors(major_id)
+    );
+    
+CREATE TABLE applications (
+	app_id INT PRIMARY KEY AUTO_INCREMENT,
+    student_id INT NOT NULL,
+    employer_id INT NOT NULL,
+    role_title VARCHAR(120) NOT NULL,
+    app_date DATE,
+    source ENUM('CareerFair','Handshake','Referral','Email','Other'),
+    status ENUM('Applied','Interview','Offer','Rejected','Withdrawn') DEFAULT 'Applied',
+    salary_offer INT NULL,
+    term VARCHAR(10),
+    CONSTRAINT fk_app_student FOREIGN KEY (student_id) REFERENCES students(student_id),
+    CONSTRAINT fk_app_employer FOREIGN KEY (employer_id) REFERENCES employers(employer_id)
+);
+
