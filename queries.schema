@@ -33,4 +33,3 @@ LEFT JOIN applications A ON S.student_id = A.student_id
 GROUP BY S.last_name, S.first_name, S.gpa
 ORDER BY offers DESC, S.gpa DESC
 LIMIT 6
--- 
