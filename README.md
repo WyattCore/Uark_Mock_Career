@@ -1,4 +1,6 @@
 # Uark_Mock_Career
+<img width="1242" height="716" alt="image" src="https://github.com/user-attachments/assets/b1ba6449-f0ea-4323-a458-11136f165963" />
+
 
 This is a brief database project I came up with to simulate data management for a mock University of Arkansas Career Fair.
 
