@@ -4,7 +4,7 @@
 
 This is a brief database project I came up with to simulate data management for a mock University of Arkansas Career Fair.
 
-I utilizied MySQL Workbench to put this together. I used the following techniques:
+I utilizied MySQL Workbench and PowerBi. I used the following techniques:
 
 CREATE DATABASE, CREATE TABLE, INSERT INTO/VALUES, SELECT/AS/FROM, LEFT JOIN, WHERE, GROUP BY, ORDER BY
 
