@@ -1,5 +1,6 @@
 # Uark_Mock_Career
-<img width="1323" height="764" alt="image" src="https://github.com/user-attachments/assets/c34edc1a-33d5-4b5c-bdba-2caff48f94ef" />
+
+<img width="903" height="505" alt="image" src="https://github.com/user-attachments/assets/995c4f0d-f60a-4169-8762-7704f227c3e8" />
 
 
 
